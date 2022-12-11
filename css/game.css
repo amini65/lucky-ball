@@ -1,0 +1,187 @@
+#game {
+    position: relative;
+}
+
+.result-number {
+    text-align: center;
+    height: 26px;
+}
+
+.card-result {
+    display: inline-block;
+}
+
+.card-result {
+    margin-top: 0;
+    font-weight: bold;
+    color: #fff;
+    padding-right: 15px;
+}
+
+#result-bet {
+    width: 15%;
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    padding-left: 10px;
+}
+
+.factor {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.factor .num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.factor .lbl {
+    margin-left: 5px;
+}
+
+.factor .result {
+    border: 2px solid #ff0;
+}
+
+.factor .hit {
+    background-image: radial-gradient(circle at 74% 90%, #fe7302, #fdd606);
+    color: #000;
+    font-weight: 700;
+}
+
+#card-board {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 63%;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.card {
+    width: 14%;
+    height: 12%;
+    position: relative;
+    margin: 5px;
+}
+
+.back-face {
+    width: 52px;
+    height: 52px;
+    margin-top: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    background-image: radial-gradient(circle at 74% 90%, #000, #601034);
+    box-shadow: 10px 10px 20px -14px #0a0e1f;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+}
+
+.back-face::after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 38px;
+    height: 38px;
+    border: 2px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+}
+
+.back-face.selected {
+    background-image: radial-gradient(circle at 74% 90%, #f294b5, #fff);
+    color: #000;
+    font-weight: 700;
+}
+
+.back-face.selected::after {
+    border: 2px solid rgba(255, 0, 0, .31);
+}
+
+.back-face.result {
+    border: 2px solid #ff0;
+}
+
+.back-face.hit {
+    background-image: radial-gradient(circle at 74% 90%, #fe7302, #fdd606);
+    color: #000;
+    font-weight: 700;
+}
+
+.back-face.hit::after {
+    border: 2px solid #ce6d1b;
+}
+
+#factors {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 100px;
+    z-index: 10;
+    padding-left: 10px;
+}
+
+.opacity {
+    opacity: .5;
+}
+
+.hidden {
+    pointer-events: none;
+}
+
+.img-result {
+    width: 30px!important;
+}
+
+@media screen and (max-width: 780px) {
+    .img-result {
+        width: 25px!important;
+    }
+    .result-number {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 488px) {
+    .img-result {
+        width: 20px!important;
+    }
+    .img-result p {
+        font-size: 12px;
+    }
+    .result-number {
+        width: 33%;
+        height: 50px;
+    }
+}
